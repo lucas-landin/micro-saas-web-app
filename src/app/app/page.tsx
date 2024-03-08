@@ -1,7 +1,9 @@
-export default function page () {
-    return ( 
-    <h1>App Page</h1> 
-    );
+import { auth } from "@/services/auth";
+export default async function page () {
+    
+    const session = await auth()
+
+    return (<pre>{JSON.stringify(session?.user,null, 1)}</pre>);
 }
 
  
